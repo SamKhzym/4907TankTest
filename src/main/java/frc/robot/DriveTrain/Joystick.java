@@ -7,8 +7,8 @@ public class Joystick {
 
     private XboxController controller;
     private int port;
-
-
+    private double yLeftAxis;
+    private double xRightAxis;
 
     public Joystick(int port) {
 
@@ -16,15 +16,20 @@ public class Joystick {
         this.port = port;
 
     }
-    
+
+    public void updateAxisValues() {
+        this.yLeftAxis = controller.getY(Hand.kLeft);
+        this.xRightAxis = controller.getX(Hand.kLeft);
+    }
     
     public double getSpeedAxisLeft() {
-        return controller.getY(Hand.kLeft);
-    }
+        return this.yLeftAxis;
+    }       
 
     public double getDirectionAxisRight() {
-        return controller.getX(Hand.kRight);
+        return xRightAxis;
     }
+
 
     
 
