@@ -29,8 +29,10 @@ public class DriveTrain {
     }
     
     public void execute() {
-       this.speed =  joystick.getSpeedAxisLeft();
-       this.direction = joystick.getDirectionAxisRight();
+        joystick.updateAxisValues();
+
+        this.speed =  joystick.getSpeedAxisLeft();
+        this.direction = joystick.getDirectionAxisRight();
 
         double leftSpeed, rightSpeed;
 

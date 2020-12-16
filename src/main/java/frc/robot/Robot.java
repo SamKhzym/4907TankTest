@@ -58,6 +58,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+
+    SmartDashboard.putNumber("Speed", tankdrive.getSpeed());
+    SmartDashboard.putNumber("Direction", tankdrive.getDirection());
+
   }
 
   /**
@@ -110,4 +114,5 @@ public class Robot extends TimedRobot {
   @Override
   public void testPeriodic() {
   }
+
 }
